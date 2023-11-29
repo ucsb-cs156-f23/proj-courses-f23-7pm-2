@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React, { useEffect } from "react";
 import { toast } from "react-toastify";
+import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
 import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
 import BasicCourseSearchForm from "main/components/BasicCourseSearch/BasicCourseSearchForm";
@@ -11,6 +12,7 @@ import SectionsTable from "main/components/Sections/SectionsTable";
 export default function SectionSearchesIndexPage() {
   // Stryker disable next-line all : Can't test state because hook is internal
   const [sectionJSON, setSectionJSON] = useState([]);
+  const { data: currentUser } = useCurrentUser();
 
   const objectToAxiosParams = (query) => ({
     url: "/api/sections/basicsearch",
@@ -67,11 +69,13 @@ export default function SectionSearchesIndexPage() {
   //not sure how to mutation test for empty dependency list
   // Stryker disable all
   useEffect(() => {
-    mutationSubjects.mutate();
+    if (hasRole(currentUser, "ROLE_ADMIN")) {
+      mutationSubjects.mutate();
+    }
     //not sure how to get around eslint for an empty dependency
     //list since I have to make it empty to only run on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [currentUser]);
   // Stryker restore all
 
   return (

@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { useBackend, _useBackendMutation } from "main/utils/useBackend";
 import PersonalSectionsTable from "main/components/PersonalSections/PersonalSectionsTable";
 import { yyyyqToQyy } from "main/utils/quarterUtilities";
-import PersonalSectionsTable from "main/components/PersonalSections/PersonalSectionsTable";
 
 export default function CourseDetailsIndexPage() {
   // Stryker disable next-line all : Can't test state because hook is internal

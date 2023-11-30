@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 
-import CourseDetailsTable from "main/components/CourseDetails/CourseDetailsTable";
+import PersonalSectionsTable from "main/components/PersonalSections/PersonalSectionsTable";
 import { personalSectionsFixtures } from "fixtures/personalSectionsFixtures";
 
 const mockedNavigate = jest.fn();
@@ -25,7 +25,7 @@ describe("UserTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <CourseDetailsTable details={[]} />
+          <PersonalSectionsTable details={[]} />
         </MemoryRouter>
       </QueryClientProvider>,
     );
@@ -36,7 +36,7 @@ describe("UserTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <CourseDetailsTable
+          <PersonalSectionsTable
             details={personalSectionsFixtures.threePersonalSections}
           />
         </MemoryRouter>
@@ -62,7 +62,7 @@ describe("UserTable tests", () => {
       "enrolled",
       "location",
     ];
-    const testId = "CourseDetailsTable";
+    const testId = "PersonalSectionsTable";
 
     expectedHeaders.forEach((headerText) => {
       const header = screen.getByText(headerText);

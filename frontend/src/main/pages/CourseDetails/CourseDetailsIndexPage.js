@@ -2,8 +2,9 @@ import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
 import _BasicCourseTable from "main/components/Courses/BasicCourseTable";
 import { useParams } from "react-router-dom";
 import { useBackend, _useBackendMutation } from "main/utils/useBackend";
-import CourseDetailsTable from "main/components/CourseDetails/CourseDetailsTable";
+import PersonalSectionsTable from "main/components/PersonalSections/PersonalSectionsTable"; "main/components/PersonalSections/PersonalSectionsTable";
 import { yyyyqToQyy } from "main/utils/quarterUtilities";
+import PersonalSectionsTable from "main/components/PersonalSections/PersonalSectionsTable";
 
 export default function CourseDetailsIndexPage() {
   // Stryker disable next-line all : Can't test state because hook is internal
@@ -34,7 +35,7 @@ export default function CourseDetailsIndexPage() {
           </h5>
         )}
 
-        {moreDetails && <CourseDetailsTable details={[moreDetails]} />}
+        {moreDetails && <PersonalSectionsTable details={[moreDetails]} />}
       </div>
     </BasicLayout>
   );

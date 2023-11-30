@@ -2,7 +2,8 @@ import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
 import _BasicCourseTable from "main/components/Courses/BasicCourseTable";
 import { useParams } from "react-router-dom";
 import { useBackend, _useBackendMutation } from "main/utils/useBackend";
-import PersonalSectionsTable from "main/components/PersonalSections/PersonalSectionsTable"; "main/components/PersonalSections/PersonalSectionsTable";
+import PersonalSectionsTable from "main/components/PersonalSections/PersonalSectionsTable";
+("main/components/PersonalSections/PersonalSectionsTable");
 import { yyyyqToQyy } from "main/utils/quarterUtilities";
 import PersonalSectionsTable from "main/components/PersonalSections/PersonalSectionsTable";
 

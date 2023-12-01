@@ -52,6 +52,9 @@ public class UCSBCurriculumService {
   public static final String ALL_SECTIONS_ENDPOINT =
       "https://api.ucsb.edu/academics/curriculums/v3/classes/{quarter}/{enrollcode}";
 
+  public static final String FINALS_ENDPOINT = 
+      "https://api.ucsb.edu/academics/curriculums/v3/finals";
+
   public String getJSON(String subjectArea, String quarter, String courseLevel) {
 
     HttpHeaders headers = new HttpHeaders();
